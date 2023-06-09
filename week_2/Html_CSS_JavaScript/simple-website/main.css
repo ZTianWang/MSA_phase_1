@@ -1,0 +1,56 @@
+/* Pseudo-class selectors: used on special state of element 
+    (:root) : add global constants for <html>*/
+:root {
+    --green: #00ff00;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fontColor);
+    font-family: helvetica;
+}
+
+/* element selector */
+ul {
+    font-family: Helvetica;
+}
+
+/* id selector */
+.list {
+    list-style: square;
+}
+
+/* class selector */
+#msg {
+    font-family: monospace;
+}
+
+.light-theme {
+    /* define varables bg and fontColor 
+        var(): use varable specified in :root selector*/
+    --bg: var(--green);
+    --fontColor: var(--white);
+    --btnBg: var(--black);
+    --btnFontColor: var(var(--white));
+}
+
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--green);
+    --btnBg: var(--white);
+    --btnFontColor: var(--black);
+}
+
+.btn {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background: var(--btnBg);
+}
